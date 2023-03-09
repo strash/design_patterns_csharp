@@ -4,7 +4,7 @@
 	{
 		private readonly string _content = "";
 
-		public string Content { get => this._content; }
+		public string Content => this._content;
 
 		public Memento(string content)
 		{

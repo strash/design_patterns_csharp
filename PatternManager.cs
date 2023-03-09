@@ -7,6 +7,7 @@ using Composite;
 using Decorator;
 using Facade;
 using Factory;
+using Interpreter;
 using Iterator;
 using Mediator;
 using Memento;
@@ -328,6 +329,40 @@ namespace PatternManager
 			invoker.DoTheThing(turnOffCommand);
 			invoker.UndoThatLastThing();
 			invoker.UndoThatLastThing();
+		}
+	}
+
+	class InterpreterPattern : Pattern
+	{
+		public override void RunPattern()
+		{
+			this._PrintPatternTitle("Interpreter");
+
+			Context context = new();
+			Expression input = new Expression { Value = "four" };
+
+			OperatorExpression expression = new OrOperatorExpression
+			{
+				Left = new EqualOperatorExpression
+				{
+					Left = input,
+					Right = new Expression { Value = "4" }
+				},
+				Right = new EqualOperatorExpression
+				{
+					Left = input,
+					Right = new Expression { Value = "four" }
+				}
+			};
+
+			Console.ForegroundColor = ConsoleColor.Green;
+			input.Value = "4";
+			expression.Interpret(context);
+			Console.WriteLine(context.Result.Pop());
+
+			input.Value = "44";
+			expression.Interpret(context);
+			Console.WriteLine(context.Result.Pop());
 		}
 	}
 

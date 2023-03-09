@@ -31,20 +31,9 @@
 			this._light = light;
 		}
 
-		public void Execute()
-		{
-			this._light.TurnOn();
-		}
-
-		public void Undo()
-		{
-			this._light.TurnOff();
-		}
-
-		public void Redo()
-		{
-			this.Execute();
-		}
+		public void Execute() => this._light.TurnOn();
+		public void Undo() => this._light.TurnOff();
+		public void Redo() => this.Execute();
 	}
 
 	// Concrete command #2
@@ -57,20 +46,9 @@
 			this._light = light;
 		}
 
-		public void Execute()
-		{
-			this._light.TurnOff();
-		}
-
-		public void Undo()
-		{
-			this._light.TurnOn();
-		}
-
-		public void Redo()
-		{
-			this.Execute();
-		}
+		public void Execute() => this._light.TurnOff();
+		public void Undo() => this._light.TurnOn();
+		public void Redo() => this.Execute();
 	}
 
 	// Invoker

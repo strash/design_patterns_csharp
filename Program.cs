@@ -60,6 +60,9 @@ namespace DesignPatterns
 			Pattern command = new CommandPattern();
 			command.RunPattern();
 
+			Pattern interpreter = new InterpreterPattern();
+			interpreter.RunPattern();
+
 			Pattern iterator = new IteratorPattern();
 			iterator.RunPattern();
 

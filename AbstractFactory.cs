@@ -50,27 +50,15 @@
 
 	class WoodenDoorFactory : IDoorFactory
 	{
-		public IDoorInfo MakeDoor()
-		{
-			return new WoodenDoorInfo();
-		}
+		public IDoorInfo MakeDoor() => new WoodenDoorInfo();
 
-		public IDoorFittingExpert HireExpert()
-		{
-			return new Carpenter();
-		}
+		public IDoorFittingExpert HireExpert() => new Carpenter();
 	}
 
 	class IronDoorFactory : IDoorFactory
 	{
-		public IDoorInfo MakeDoor()
-		{
-			return new IronDoorInfo();
-		}
+		public IDoorInfo MakeDoor() => new IronDoorInfo();
 
-		public IDoorFittingExpert HireExpert()
-		{
-			return new Welder();
-		}
+		public IDoorFittingExpert HireExpert() => new Welder();
 	}
 }

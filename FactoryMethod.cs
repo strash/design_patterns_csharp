@@ -24,7 +24,7 @@ namespace Factory
 	abstract class HiringManager
 	{
 		// Factory method
-		abstract protected IInterviewer MakeInterviewer();
+		protected abstract IInterviewer MakeInterviewer();
 
 		public void TakeInterview()
 		{
@@ -35,7 +35,7 @@ namespace Factory
 
 	class DevelopmentManager : HiringManager
 	{
-		override protected IInterviewer MakeInterviewer()
+		protected override IInterviewer MakeInterviewer()
 		{
 			return new Developer();
 		}
@@ -43,7 +43,7 @@ namespace Factory
 
 	class MarketingManager : HiringManager
 	{
-		override protected IInterviewer MakeInterviewer()
+		protected override IInterviewer MakeInterviewer()
 		{
 			return new CommunityExecutive();
 		}
