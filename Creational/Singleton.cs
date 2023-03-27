@@ -1,6 +1,6 @@
 ﻿namespace Singleton
 {
-	class President
+	sealed class President
 	{
 		private static readonly Lazy<President> _instance = new Lazy<President>(() => new President());
 
